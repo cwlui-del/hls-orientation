@@ -91,42 +91,42 @@ st.markdown("### 🔍 查詢你的專屬日程")
 programme_list = ["顯示全日所有活動 (Show All)"] + list(df["課程"].unique())
 selected_prog = st.selectbox("請選擇你入讀的課程：", programme_list)
 
-# 📝 5. 全新加入：依據入讀課程字頭（AS / FS），自動進行網上表格智慧分流
+# 📝 5. 修正後的智慧表單分流邏輯（改用更加精準的 "in" 關鍵字搜尋）
 st.markdown("### 📋 新生必填網上表格 (Online Forms)")
 
-if selected_prog.startswith("AS"):
-    # 高級文憑（AS字頭）新生表單
+if "AS" in selected_prog:
+    # 只要選單文字包含 AS 字頭，即觸核高級文憑表單
     st.markdown("""
     <div class="form-section">
-        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ HD課程新生請注意：</p>
-        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份HD專屬表格：</p>
+        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ AS字頭課程新生請注意：</p>
+        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份學系合規表格：</p>
         
         <p style="font-size:14px; font-weight:bold; margin-bottom:2px;">1. 學生出席率要求和操行及紀律同意書</p>
-        <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUNjhQMlVUU0haWVJVQUc4OTY5TFZWUEI2OS4u&sharetoken=Vr72GmTA7i5TsElwJmZT" target="_blank" class="form-btn">📝 線上填寫同意書</a>
+        <a href="https://cloud.microsoft" target="_blank" class="form-btn">📝 線上填寫同意書</a>
         
         <p style="font-size:14px; font-weight:bold; margin-top:15px; margin-bottom:2px;">2. 實驗室安全回條</p>
-        <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUOFpVUzgyT05ROTZWNEZDMkNMMzZPNTFaTi4u&sharetoken=Fjhj6vHhmnciXJ3QpjOo" target="_blank" class="form-btn">🔬 線上填寫安全回條</a>
+        <a href="https://cloud.microsoft" target="_blank" class="form-btn">🔬 線上填寫安全回條</a>
     </div>
     """, unsafe_allow_html=True)
 
-elif selected_prog.startswith("FS"):
-    # 基礎課程文憑（FS字頭）新生表單
+elif "FS" in selected_prog:
+    # 只要選單文字包含 FS 字頭，即觸發基礎文憑表單
     st.markdown("""
     <div class="form-section">
-        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ DFS課程新生請注意：</p>
-        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份基礎課程文憑專屬表格：</p>
+        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ FS字頭課程新生請注意：</p>
+        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份基礎文憑專屬表格：</p>
         
         <p style="font-size:14px; font-weight:bold; margin-bottom:2px;">1. 學生出席率要求和操行及紀律同意書 (DFS)</p>
-        <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUMUEySDROSzUyRVA4RFdGSkJLUjhQQTgwTy4u&sharetoken=fXfweBOhGmYfznYAeXvB" target="_blank" class="form-btn">📝 線上填寫同意書 (DFS)</a>
+        <a href="https://cloud.microsoft" target="_blank" class="form-btn">📝 線上填寫同意書 (DFS)</a>
         
         <p style="font-size:14px; font-weight:bold; margin-top:15px; margin-bottom:2px;">2. 實驗室安全回條 (FS113002A)</p>
-        <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRURVRPUVk1Vko3N08yVDdUVTNZRExVNVNQWi4u&sharetoken=Fjhj6vH" target="_blank" class="form-btn">🔬 線上填寫安全回條 (FS)</a>
+        <a href="https://cloud.microsoft" target="_blank" class="form-btn">🔬 線上填寫安全回條 (FS)</a>
     </div>
     """, unsafe_allow_html=True)
 
 else:
-    # 未篩選時的防呆提示
-    st.warning("💡 請先在上方下拉選單選擇你的【入讀課程】，系統會自動顯示你需要填寫的網上表格連結。")
+    # 預設狀態（顯示全日所有活動）時的提示
+    st.warning("💡 請先在上方下拉選單選擇你的【入讀課程】，系統會自動為你生成需要填寫的網上表格連結。")
 
 # 6. 篩選日程邏輯
 if selected_prog != "顯示全日所有活動 (Show All)":
