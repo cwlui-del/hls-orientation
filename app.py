@@ -91,42 +91,48 @@ st.markdown("### 🔍 查詢你的專屬日程")
 programme_list = ["顯示全日所有活動 (Show All)"] + list(df["課程"].unique())
 selected_prog = st.selectbox("請選擇你入讀的課程：", programme_list)
 
-# 📝 5. 修正後的智慧表單分流邏輯（改用更加精準的 "in" 關鍵字搜尋）
+# 📝 5. 採用 100% 安全的 Streamlit 官方原生元件進行表單分流
 st.markdown("### 📋 新生必填網上表格 (Online Forms)")
 
 if "AS" in selected_prog:
-    # 只要選單文字包含 AS 字頭，即觸核高級文憑表單
-    st.markdown("""
-    <div class="form-section">
-        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ AS字頭課程新生請注意：</p>
-        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份學系合規表格：</p>
-        
-        <p style="font-size:14px; font-weight:bold; margin-bottom:2px;">1. 學生出席率要求和操行及紀律同意書</p>
-        <a href="https://cloud.microsoft" target="_blank" class="form-btn">📝 線上填寫同意書</a>
-        
-        <p style="font-size:14px; font-weight:bold; margin-top:15px; margin-bottom:2px;">2. 實驗室安全回條</p>
-        <a href="https://cloud.microsoft" target="_blank" class="form-btn">🔬 線上填寫安全回條</a>
-    </div>
-    """, unsafe_allow_html=True)
+    # 只要選單文字包含 AS 字頭
+    st.info("💡 **AS字頭課程新生請注意：**\n\n請點擊下方按鈕，於今日內在網上填妥並提交以下兩份學系合規表格：")
+    
+    # 官方安全連結按鈕一
+    st.link_button(
+        "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書", 
+        "https://cloud.microsoft",
+        use_container_width=True
+    )
+    
+    # 官方安全連結按鈕二
+    st.link_button(
+        "🔬 2. 線上填寫：實驗室安全回條", 
+        "https://cloud.microsoft",
+        use_container_width=True
+    )
 
 elif "FS" in selected_prog:
-    # 只要選單文字包含 FS 字頭，即觸發基礎文憑表單
-    st.markdown("""
-    <div class="form-section">
-        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ FS字頭課程新生請注意：</p>
-        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份基礎文憑專屬表格：</p>
-        
-        <p style="font-size:14px; font-weight:bold; margin-bottom:2px;">1. 學生出席率要求和操行及紀律同意書 (DFS)</p>
-        <a href="https://cloud.microsoft" target="_blank" class="form-btn">📝 線上填寫同意書 (DFS)</a>
-        
-        <p style="font-size:14px; font-weight:bold; margin-top:15px; margin-bottom:2px;">2. 實驗室安全回條 (FS113002A)</p>
-        <a href="https://cloud.microsoft" target="_blank" class="form-btn">🔬 線上填寫安全回條 (FS)</a>
-    </div>
-    """, unsafe_allow_html=True)
+    # 只要選單文字包含 FS 字頭
+    st.info("💡 **FS字頭課程新生請注意：**\n\n請點擊下方按鈕，於今日內在網上填妥並提交以下兩份基礎文憑專屬表格：")
+    
+    # 官方安全連結按鈕一
+    st.link_button(
+        "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書 (DFS)", 
+        "https://cloud.microsoft",
+        use_container_width=True
+    )
+    
+    # 官方安全連結按鈕二
+    st.link_button(
+        "🔬 2. 線上填寫：實驗室安全回條 (FS113002A)", 
+        "https://cloud.microsoft",
+        use_container_width=True
+    )
 
 else:
-    # 預設狀態（顯示全日所有活動）時的提示
-    st.warning("💡 請先在上方下拉選單選擇你的【入讀課程】，系統會自動為你生成需要填寫的網上表格連結。")
+    # 預設狀態或「顯示全日所有活動」時的提示
+    st.warning("💡 請先在上方下拉選單選擇你的【入讀課程 / 班別】，系統會自動為你生成需要填寫的網上表格連結。")
 
 # 6. 篩選日程邏輯
 if selected_prog != "顯示全日所有活動 (Show All)":
