@@ -67,35 +67,29 @@ orientation_data = {
     ],
      # 💡 這裡貼上你們製作的路線圖圖片網址。以下先用免費的 placeholder 示意圖代替，上線前改掉即可
     "地圖網址 (MapUrl)": [
-        "https://placeholder.com", 
-        "https://placeholder.com",
-        "https://placeholder.com", 
-        "https://placeholder.com",
-        "https://placeholder.com", 
-        "https://placeholder.com",
-        "https://placeholder.com", 
-        "https://placeholder.com"
+        "https://github.com/cwlui-del/hls-orientation/blob/main/GF.png?raw=true", 
+        "https://github.com/cwlui-del/hls-orientation/blob/main/1F.png?raw=true",
+        "https://github.com/cwlui-del/hls-orientation/blob/main/2F.png?raw=true"
     ]
 }
 
-# 轉化為 Pandas DataFrame 方便進行一鍵篩選
 df = pd.DataFrame(orientation_data)
 
 # 5. 新生互動互動篩選器（下拉選單）
 st.markdown("### 🔍 查詢你的專屬日程")
-programme_list = ["顯示全日所有活動 (Show All)"] + list(df["課程/學系 (Target)"].unique())
-selected_prog = st.selectbox("請選擇你入讀的課程 / 班別：", programme_list)
+programme_list = ["顯示全日所有活動 (Show All)"] + list(df["課程"].unique())
+selected_prog = st.selectbox("請選擇你入讀的課程：", programme_list)
 
 # 根據新生的選擇，動態過濾不相關的資訊
 if selected_prog != "顯示全日所有活動 (Show All)":
-    filtered_df = df[df["課程/學系 (Target)"] == selected_prog]
+    filtered_df = df[df["課程"] == selected_prog]
     # 自動幫選了個別學系的學生，在最頂部疊加全體都要參加的早上大會
-    general_df = df[df["課程/學系 (Target)"] == "全體 (HD & DFS)"]
+    general_df = df[df["課程"] == "全體 (HD & DFS)"]
     filtered_df = pd.concat([general_df, filtered_df]).drop_duplicates()
 else:
     filtered_df = df
 
-# 6. 渲染日程卡片（極致適合手機單手滑動閱讀）
+# 4. 渲染日程卡片（極致適合手機單手滑動閱讀）
 st.markdown("### 📅 當日活動時間線 (Timeline)")
 
 for index, row in filtered_df.iterrows():
@@ -109,12 +103,21 @@ for index, row in filtered_df.iterrows():
     </div>
     """, unsafe_allow_html=True)
 
-# 7. 針對基礎文憑（DFS）新生的專屬點對點分流提示
+  # 💡 在卡片下方新增一個專屬的 Streamlit 免費按鈕，點擊就展開該地點的路線圖
+    with st.expander(f"🗺️ 點擊查看前往【{row['地點 (Venue)']}】的路線圖指引"):
+        st.image(row['地圖網址 (MapUrl)'], use_container_width=True, caption=f"從學校正門前往 {row['地點 (Venue)']} 路線圖")
+        
+# 5. 針對基礎文憑（DFS）新生的專屬點對點分流提示
 if selected_prog == "顯示全日所有活動 (Show All)" or "基礎課程文憑" in selected_prog:
     st.info("💡 **DFS 基礎課程文憑新生注意：**\n\n在 11:15 完結第一階段後，請根據你的班別前往以下分流教室：\n* **1A, 1E, 1G 班** ➡️ 前往 **118A 室**\n* **1B, 1F 班** ➡️ 前往 **104 室**\n* **1C, 1D, 1H 班** ➡️ 留在 **禮堂 (Hall)**")
 
 # 8. 底部重要公告與惡劣天氣安排（防呆摺疊面板）
 st.markdown("---")
+st.markdown("### 🗺️ 校園完整樓層分佈圖 (General Map)")
+with st.expander("🏢 點擊展開查看校園全景 / 樓層指南"):
+    # 這裡可以放一張包含全校所有教室位置的大地圖
+    st.image("https://placeholder.com", use_container_width=True, caption="HLS 校園整體教室分佈平面圖")
+    
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
 
 with st.expander("☔ 查看颱風 / 暴雨取消及延期指引"):
