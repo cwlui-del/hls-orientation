@@ -8,7 +8,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# 2. 視覺風格增加按鈕與地圖美化
+# 2. 視覺風格（含手機卡片、地圖按鈕美化）
 st.markdown("""
     <style>
     .main-title { font-size: 24px; font-weight: bold; color: #007A87; text-align: center; margin-bottom: 5px; }
@@ -17,13 +17,15 @@ st.markdown("""
     .time-tag { font-weight: bold; color: #007A87; font-size: 15px; }
     .venue-tag { background-color: #E2F0D9; padding: 3px 10px; border-radius: 6px; font-size: 13px; color: #385723; font-weight: bold; float: right; }
     .remarks-tag { background-color: #FFF2CC; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: #D6B656; font-weight: bold; }
+    /* 優化地圖顯示，確保在手機上不變形 */
+    .map-box { width: 100%; border-radius: 8px; margin-top: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
     </style>
 """, unsafe_allow_html=True)
 
 st.markdown('<div class="main-title">🔬 Dept of Health & Life Sciences</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">Orientation Day 2026-27 新生導航 App</div>', unsafe_allow_html=True)
 
-# 3. 完整日程資料（新增了「地圖網址」欄位，請把下方的網址替換成你們自己畫的圖）
+# 3. 日程資料庫
 orientation_data = {
     "課程/學系 (Target)": [
         "全體 (HD & DFS)", "全體 (HD & DFS)", 
@@ -65,13 +67,19 @@ orientation_data = {
         "環境管理系專屬", "樹木管理英文班", 
         "樹木管理廣東話班", "稍後需進行分流"
     ],
-    # 💡 這裡貼上你們製作的路線圖圖片網址。以下先用免費的 placeholder 示意圖代替，上線前改掉即可
+    # 💡 請把下方的圖片網址，替換成你們自己在 GitHub 或是圖床上的真實路線圖連結
     "地圖網址 (MapUrl)": [
-        "https://github.com/cwlui-del/hls-orientation/blob/main/GF.png?raw=true", 
-        "https://github.com/cwlui-del/hls-orientation/blob/main/1F.png?raw=true", 
-        "https://github.com/cwlui-del/hls-orientation/blob/main/2F.png?raw=true"
+        "https://unsplash.com", 
+        "https://unsplash.com",
+        "https://unsplash.com", 
+        "https://unsplash.com",
+        "https://unsplash.com", 
+        "https://unsplash.com",
+        "https://unsplash.com", 
+        "https://unsplash.com"
     ]
 }
+
 df = pd.DataFrame(orientation_data)
 
 # 4. 新生互動互動篩選器
@@ -86,11 +94,10 @@ if selected_prog != "顯示全日所有活動 (Show All)":
 else:
     filtered_df = df
 
-# 5. 渲染日程卡片與動態路線圖按鈕
+# 5. 渲染日程與摺疊地圖
 st.markdown("### 📅 當日活動時間線 (Timeline)")
 
 for index, row in filtered_df.iterrows():
-    # 建立外殼卡片
     st.markdown(f"""
     <div class="card">
         <span class="venue-tag">📍 {row['地點 (Venue)']}</span>
@@ -101,16 +108,25 @@ for index, row in filtered_df.iterrows():
     </div>
     """, unsafe_allow_html=True)
     
-    # 💡 在卡片下方新增一個專屬的 Streamlit 免費按鈕，點擊就展開該地點的路線圖
-    with st.expander(f"🗺️ 點擊查看前往【{row['地點 (Venue)']}】的路線圖指引"):
-        st.image(row['地圖網址 (MapUrl)'], use_container_width=True, caption=f"從學校正門前往 {row['地點 (Venue)']} 路線圖")
+    # 💡 改用安全的 HTML Markdown 注入地圖，徹底免除 st.image 的參數相容報錯
+    with st.expander(f"🗺️ 查看前往【{row['地點 (Venue)']}】的路線指引"):
+        st.markdown(f"""
+            <p style='font-size:13px; color:#666;'>指引：請從正門直走，跟隨綠色地標前往。</p>
+            <img src='{row['地圖網址 (MapUrl)']}' class='map-box' alt='地圖'>
+        """, unsafe_allow_html=True)
 
-# 6. DFS 基礎文憑分流教室地圖
+# 6. DFS 基礎文憑分流提示
 if selected_prog == "顯示全日所有活動 (Show All)" or "基礎文憑" in selected_prog:
     st.info("💡 **DFS 基礎文憑新生注意：**\n\n在 11:15 完結第一階段後，請根據你的班別前往以下分流教室：\n* **1A, 1E, 1G 班** ➡️ 前往 **118A 室**\n* **1B, 1F 班** ➡️ 前往 **104 室**\n* **1C, 1D, 1H 班** ➡️ 留在 **禮堂 (Hall)**")
 
 # 7. 底部重要公告與總地圖
 st.markdown("---")
+st.markdown("### 🗺️ 校園完整樓層分佈圖 (General Map)")
+with st.expander("🏢 點擊展開查看校園全景 / 樓層指南"):
+    st.markdown("""
+        <img src='https://unsplash.com' class='map-box' alt='校園總圖'>
+    """, unsafe_allow_html=True)
+
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
 with st.expander("☔ 查看颱風 / 暴雨取消及延期指引"):
     st.warning("若當天早上 6:15 或之前發出紅雨/黑雨警告或八號或以上烈風信號，當日活動將全部取消，並順延至 8月28日 (09:00-11:00) 在原定教室舉行。")
