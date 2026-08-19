@@ -177,7 +177,7 @@ for index, row in filtered_df.iterrows():
 
 # 6. DFS 基礎文憑分流提示
 if selected_prog == "顯示全日所有活動 (Show All)" or "基礎課程文憑" in selected_prog:
-    st.info("💡 **DFS 基礎課程文憑新生注意：**\n\n在 11:15 完結第一階段後，請根據你的班別前往以下分流教室：\n* **1A, 1E, 1G 班** ➡️ 前往 **118A 室**\n* **1B, 1F 班** ➡️ 前往 **104 室**\n* **1C, 1D, 1H 班** ➡️ 留在 **禮堂 (Hall)**")
+    st.info("💡 **DFS 基礎課程文憑新生注意：**\n\n在 11:15 完結第一階段後，請根據你的班別前往以下分流課室：\n* **1A, 1E, 1G 班** ➡️ 前往 **118A 室**\n* **1B, 1F 班** ➡️ 前往 **104 室**\n* **1C, 1D, 1H 班** ➡️ 留在 **禮堂 (Hall)**")
 
 # 7. 底部重要公告與總地圖
 st.markdown("---")
@@ -197,6 +197,6 @@ with st.expander("☔ 查看颱風 / 暴雨取消及延期指引"):
     st.warning("若當天早上 6:15 或之前發出紅雨/黑雨警告或八號或以上烈風信號，當日活動將全部取消，並順延至 8月28日 (09:00-11:00) 在原定教室舉行。")
 
 with st.expander("📞 缺席處理與學系聯絡"):
-    st.write("當天因病或其他緊急原因無法出席者，請務必瀏覽**新生資訊網站(https://www.vtc.edu.hk/st/orientation)** 或登入 **學生 Webmail(https://webmail.vtc.edu.hk )** 查看後續補領學生證與教學大綱的安排。")
+    st.write("當天因病或其他緊急原因無法出席者，請務必瀏覽**新生資訊網站(https://www.vtc.edu.hk/st/orientation)** 或登入 **學生 Webmail(https://webmail.vtc.edu.hk )** 查看後續領取學生證與課程上課的安排。")
     st.write("如有任何疑問，可於辦公時間致電學系查詢：")
     st.markdown("- **電話：** 2256 7100 / 2256 7156 / 2256 7158")
