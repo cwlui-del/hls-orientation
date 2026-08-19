@@ -8,7 +8,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# 2. 視覺風格（含手機卡片、地圖按鈕美化）
+# 2. 視覺風格（含手機卡片、地圖、以及全新表單按鈕美化）
 st.markdown("""
     <style>
     .main-title { font-size: 24px; font-weight: bold; color: #007A87; text-align: center; margin-bottom: 5px; }
@@ -17,8 +17,12 @@ st.markdown("""
     .time-tag { font-weight: bold; color: #007A87; font-size: 15px; }
     .venue-tag { background-color: #E2F0D9; padding: 3px 10px; border-radius: 6px; font-size: 13px; color: #385723; font-weight: bold; float: right; }
     .remarks-tag { background-color: #FFF2CC; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: #D6B656; font-weight: bold; }
-    /* 優化地圖顯示，確保在手機上不變形 */
     .map-box { width: 100%; border-radius: 8px; margin-top: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    
+    /* 📝 表單專屬手機優化樣式 */
+    .form-section { background-color: #F9F9F9; border: 1px dashed #007A87; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
+    .form-btn { display: block; text-align: center; background-color: #007A87; color: white !important; font-weight: bold; padding: 12px; border-radius: 8px; text-decoration: none; margin-top: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .form-btn:hover { background-color: #005A66; text-decoration: none; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -87,6 +91,44 @@ st.markdown("### 🔍 查詢你的專屬日程")
 programme_list = ["顯示全日所有活動 (Show All)"] + list(df["課程"].unique())
 selected_prog = st.selectbox("請選擇你入讀的課程：", programme_list)
 
+# 📝 5. 全新加入：依據入讀課程字頭（AS / FS），自動進行網上表格智慧分流
+st.markdown("### 📋 新生必填網上表格 (Online Forms)")
+
+if selected_prog.startswith("AS"):
+    # 高級文憑（AS字頭）新生表單
+    st.markdown("""
+    <div class="form-section">
+        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ AS字頭課程新生請注意：</p>
+        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份學系合規表格：</p>
+        
+        <p style="font-size:14px; font-weight:bold; margin-bottom:2px;">1. 學生出席率要求和操行及紀律同意書</p>
+        <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUNjhQMlVUU0haWVJVQUc4OTY5TFZWUEI2OS4u&sharetoken=Vr72GmTA7i5TsElwJmZT" target="_blank" class="form-btn">📝 線上填寫同意書</a>
+        
+        <p style="font-size:14px; font-weight:bold; margin-top:15px; margin-bottom:2px;">2. 實驗室安全回條</p>
+        <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUOFpVUzgyT05ROTZWNEZDMkNMMzZPNTFaTi4u&sharetoken=Fjhj6vHhmnciXJ3QpjOo" target="_blank" class="form-btn">🔬 線上填寫安全回條</a>
+    </div>
+    """, unsafe_allow_html=True)
+
+elif selected_prog.startswith("FS"):
+    # 基礎課程文憑（FS字頭）新生表單
+    st.markdown("""
+    <div class="form-section">
+        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ FS字頭課程新生請注意：</p>
+        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份基礎課程文憑專屬表格：</p>
+        
+        <p style="font-size:14px; font-weight:bold; margin-bottom:2px;">1. 學生出席率要求和操行及紀律同意書 (DFS)</p>
+        <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUMUEySDROSzUyRVA4RFdGSkJLUjhQQTgwTy4u&sharetoken=fXfweBOhGmYfznYAeXvB" target="_blank" class="form-btn">📝 線上填寫同意書 (DFS)</a>
+        
+        <p style="font-size:14px; font-weight:bold; margin-top:15px; margin-bottom:2px;">2. 實驗室安全回條 (FS113002A)</p>
+        <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRURVRPUVk1Vko3N08yVDdUVTNZRExVNVNQWi4u&sharetoken=Fjhj6vH" target="_blank" class="form-btn">🔬 線上填寫安全回條 (FS)</a>
+    </div>
+    """, unsafe_allow_html=True)
+
+else:
+    # 未篩選時的防呆提示
+    st.warning("💡 請先在上方下拉選單選擇你的【入讀課程】，系統會自動顯示你需要填寫的網上表格連結。")
+
+# 6. 篩選日程邏輯
 if selected_prog != "顯示全日所有活動 (Show All)":
     filtered_df = df[df["課程"] == selected_prog]
     general_df = df[df["課程"] == "全體 (HD & DFS)"]
