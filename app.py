@@ -98,8 +98,8 @@ if selected_prog.startswith("AS"):
     # 高級文憑（AS字頭）新生表單
     st.markdown("""
     <div class="form-section">
-        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ AS字頭課程新生請注意：</p>
-        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份學系合規表格：</p>
+        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ HD課程新生請注意：</p>
+        <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份HD專屬表格：</p>
         
         <p style="font-size:14px; font-weight:bold; margin-bottom:2px;">1. 學生出席率要求和操行及紀律同意書</p>
         <a href="https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUNjhQMlVUU0haWVJVQUc4OTY5TFZWUEI2OS4u&sharetoken=Vr72GmTA7i5TsElwJmZT" target="_blank" class="form-btn">📝 線上填寫同意書</a>
@@ -113,7 +113,7 @@ elif selected_prog.startswith("FS"):
     # 基礎課程文憑（FS字頭）新生表單
     st.markdown("""
     <div class="form-section">
-        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ FS字頭課程新生請注意：</p>
+        <p style="color:#007A87; font-weight:bold; margin-bottom:5px;">⚠️ DFS課程新生請注意：</p>
         <p style="font-size:14px; color:#444; margin-bottom:12px;">請點擊下方按鈕，於今日內在網上填妥並提交以下兩份基礎課程文憑專屬表格：</p>
         
         <p style="font-size:14px; font-weight:bold; margin-bottom:2px;">1. 學生出席率要求和操行及紀律同意書 (DFS)</p>
