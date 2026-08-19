@@ -124,7 +124,7 @@ st.markdown("---")
 st.markdown("### 🗺️ 校園樓層分佈圖 (General Map)")
 with st.expander("🏢 點擊展開查看校園樓層指南"):
     st.markdown("""
-        <img src='https://github.com/cwlui-del/hls-orientation/blob/main/Directory.png?raw=true' class='map-box' alt='校園指南'>
+        <img src='https://github.com/cwlui-del/hls-orientation/blob/main/Directory.png?raw=true' class='map-box' alt='校園指南G/F'>
     """, unsafe_allow_html=True)
 
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
