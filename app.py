@@ -8,7 +8,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# 2. 視覺風格（含手機卡片、地圖、以及全新表單按鈕美化）
+# 2. 視覺風格（✨ 全新加入：鎖定官方按鈕並將其強行放大與美化）
 st.markdown("""
     <style>
     .main-title { font-size: 24px; font-weight: bold; color: #007A87; text-align: center; margin-bottom: 5px; }
@@ -19,10 +19,22 @@ st.markdown("""
     .remarks-tag { background-color: #FFF2CC; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: #D6B656; font-weight: bold; }
     .map-box { width: 100%; border-radius: 8px; margin-top: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
     
-    /* 📝 表單專屬手機優化樣式 */
-    .form-section { background-color: #F9F9F9; border: 1px dashed #007A87; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-    .form-btn { display: block; text-align: center; background-color: #007A87; color: white !important; font-weight: bold; padding: 12px; border-radius: 8px; text-decoration: none; margin-top: 10px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .form-btn:hover { background-color: #005A66; text-decoration: none; }
+    /* 🚀 暴力放大 Streamlit 官方原生連結按鈕的樣式 */
+    div[data-testid="stHorizontalBlock"] button, 
+    div.stButton button, 
+    .st-emotion-cache-b9gqof e1f1v7e22,
+    button[data-testid="baseButton-secondary"] {
+        background-color: #007A87 !important; /* HLS 主題深藍色 */
+        color: white !important;
+        font-size: 18px !important;           /* 🚀 字體大幅放大 */
+        font-weight: bold !important;
+        padding-top: 15px !important;         /* 🚀 上下高度增高，更好按 */
+        padding-bottom: 15px !important;
+        border-radius: 10px !important;
+        border: none !important;
+        box-shadow: 0 4px 10px rgba(0,122,135,0.2) !important;
+        transition: all 0.3s ease;
+    }
     </style>
 """, unsafe_allow_html=True)
 
