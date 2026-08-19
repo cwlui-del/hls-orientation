@@ -56,9 +56,9 @@ orientation_data = {
         "1. 院長及系主任致歡迎辭<br>2. 校園支援資訊與基礎設施講座<br>3. HLS IVElite 計劃介紹及學生會招募。所有高級文憑及基礎文憑新生均需參與。",
         "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。",
         "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。",
+        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。</b>（本場為英文班專場）。",
+        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。</b>（本場為廣東話班專場）。",
         "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。",
-        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構與時間表介紹、學分豁免申請<br>3. <b>現場派發學生證 (Student ID Card)</b>（本場為英文班專場）。",
-        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構與時間表介紹、學分豁免申請<br>3. <b>現場派發學生證 (Student ID Card)</b>（本場為廣東話班專場）。",
         "基礎課程文憑（健康與生命科學）全體說明會。介紹基礎課程大綱、校園適應。本階段結束後，將根據個別班別進行分流。"
     ],
     "重要備註 (Remarks)": [
