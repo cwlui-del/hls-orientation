@@ -69,14 +69,14 @@ orientation_data = {
     ],
     # 💡 請把下方的圖片網址，替換成你們自己在 GitHub 或是圖床上的真實路線圖連結
     "地圖網址 (MapUrl)": [
-        "https://unsplash.com", 
-        "https://unsplash.com",
-        "https://unsplash.com", 
-        "https://unsplash.com",
-        "https://unsplash.com", 
-        "https://unsplash.com",
-        "https://unsplash.com", 
-        "https://unsplash.com"
+        "https://github.com/cwlui-del/hls-orientation/blob/main/Hall.png?raw=true", 
+        "https://github.com/cwlui-del/hls-orientation/blob/main/Hall.png?raw=true",
+        "https://github.com/cwlui-del/hls-orientation/blob/main/1F.png?raw=true", 
+        "https://github.com/cwlui-del/hls-orientation/blob/main/Annex%20Hall.png?raw=true",
+        "https://github.com/cwlui-del/hls-orientation/blob/main/2F.png?raw=true", 
+        "https://github.com/cwlui-del/hls-orientation/blob/main/2F.png?raw=true",
+        "https://github.com/cwlui-del/hls-orientation/blob/main/GF.png?raw=true", 
+        "https://github.com/cwlui-del/hls-orientation/blob/main/Hall.png?raw=true"
     ]
 }
 
@@ -109,9 +109,9 @@ for index, row in filtered_df.iterrows():
     """, unsafe_allow_html=True)
     
     # 💡 改用安全的 HTML Markdown 注入地圖，徹底免除 st.image 的參數相容報錯
-    with st.expander(f"🗺️ 查看前往【{row['地點 (Venue)']}】的路線指引"):
+    with st.expander(f"🗺️ 查看【{row['地點 (Venue)']}】的位置"):
         st.markdown(f"""
-            <p style='font-size:13px; color:#666;'>指引：請留意房號前往。</p>
+            <p style='font-size:13px; color:#666;'>指引：請留意地點前往。</p>
             <img src='{row['地圖網址 (MapUrl)']}' class='map-box' alt='地圖'>
         """, unsafe_allow_html=True)
 
@@ -121,10 +121,10 @@ if selected_prog == "顯示全日所有活動 (Show All)" or "基礎課程文憑
 
 # 7. 底部重要公告與總地圖
 st.markdown("---")
-st.markdown("### 🗺️ 校園完整樓層分佈圖 (General Map)")
-with st.expander("🏢 點擊展開查看校園全景 / 樓層指南"):
+st.markdown("### 🗺️ 校園樓層分佈圖 (General Map)")
+with st.expander("🏢 點擊展開查看校園樓層指南"):
     st.markdown("""
-        <img src='https://unsplash.com' class='map-box' alt='校園總圖'>
+        <img src='https://unsplash.com' class='map-box' alt='校園指南'>
     """, unsafe_allow_html=True)
 
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
