@@ -8,7 +8,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# 2. 健康與生命科學系（HLS）專屬薄荷綠與醫學藍視覺 Style
+# 2. 視覺風格增加按鈕與地圖美化
 st.markdown("""
     <style>
     .main-title { font-size: 24px; font-weight: bold; color: #007A87; text-align: center; margin-bottom: 5px; }
@@ -20,13 +20,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# 3. 頂部橫幅與學系標題
 st.markdown('<div class="main-title">🔬 Dept of Health & Life Sciences</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">Orientation Day 2026-27 新生導航 App</div>', unsafe_allow_html=True)
 
-# 4. 直接將 PDF 的完整日程資料寫入 Python 字典中（免除讀取 CSV 失敗的風險）
+# 3. 完整日程資料（新增了「地圖網址」欄位，請把下方的網址替換成你們自己畫的圖）
 orientation_data = {
-    "課程/學系 (Target)": [
+    "課程": [
         "全體 (HD & DFS)", "全體 (HD & DFS)", 
         "AS114205 (生物醫學高級文憑)", "AS114103 (化驗科學高級文憑)", 
         "AS110114 (可持續發展及環境管理高級文憑（科目組）)", "AS114109 (保育及樹木管理高級文憑)", 
@@ -65,6 +64,17 @@ orientation_data = {
         "生物醫學高級文憑專屬", "化驗科學高級文憑專屬", 
         "可持續發展及環境管理高級文憑（科目組）專屬", "保育及樹木管理高級文憑專屬", 
         "保育及樹木管理高級文憑（授課語言：中文（廣東話））專屬", "稍後需進行分流"
+    ],
+     # 💡 這裡貼上你們製作的路線圖圖片網址。以下先用免費的 placeholder 示意圖代替，上線前改掉即可
+    "地圖網址 (MapUrl)": [
+        "https://placeholder.com", 
+        "https://placeholder.com",
+        "https://placeholder.com", 
+        "https://placeholder.com",
+        "https://placeholder.com", 
+        "https://placeholder.com",
+        "https://placeholder.com", 
+        "https://placeholder.com"
     ]
 }
 
