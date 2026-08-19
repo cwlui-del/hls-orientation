@@ -111,6 +111,6 @@ with st.expander("☔ 查看颱風 / 暴雨取消及延期指引"):
     st.warning("若當天早上 6:15 或之前發出**紅色/黑色暴雨警告**或**八號或以上烈風信號**，當日活動將全部取消，並順延至 **8月28日 (09:00-11:00)** 在原定教室舉行。")
 
 with st.expander("📞 缺席處理與學系秘書處聯絡"):
-    st.write("當天因病或其他緊急原因無法出席者，請務必瀏覽**新生資訊網站https://www.vtc.edu.hk/st/orientation**或登入 **學生 Webmail https://webmail.vtc.edu.hk** 收取學系最新資訊。")
+    st.write("當天因病或其他緊急原因無法出席者，請務必瀏覽**新生資訊網站https://www.vtc.edu.hk/st/orientation** 或登入 **學生 Webmail https://webmail.vtc.edu.hk** 收取學系最新資訊。")
     st.write("如有任何疑問，可於辦公時間致電健康及生命科學學系查詢：")
     st.markdown("- **電話：** 2256 7100 / 2256 7156 / 2256 7158")
