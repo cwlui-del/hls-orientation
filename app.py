@@ -27,17 +27,17 @@ st.markdown('<div class="sub-title">Orientation Day 2026-27 新生導航 App</di
 
 # 3. 日程資料庫
 orientation_data = {
-    "課程/學系 (Target)": [
+    "課程": [
         "全體 (HD & DFS)", "全體 (HD & DFS)", 
-        "AS114205 (生物醫學)", "AS114103 (分析科學)", 
-        "AS110114 (環境管理)", "AS114109 (樹木管理-Eng)", 
-        "AS114109J (樹木管理-粵)", "FS113002A (基礎文憑)"
+        "AS110114 (可持續發展及環境管理高級文憑（科目組）)", "AS114103 (化驗科學高級文憑)", 
+        "AS114109 (保育及樹木管理高級文憑)", "AS114109J (保育及樹木管理高級文憑（授課語言：中文（廣東話））)", 
+        "AS114205 (生物醫學高級文憑)", "FS113002A (基礎課程文憑)"
     ],
     "活動名稱 (Title)": [
-        "集合與報到 (Assembly)", "院系迎新大會 (Departmental Orientation)", 
-        "課程導向 (Programme Orientation)", "課程導向 (Programme Orientation)", 
-        "課程導向 (Programme Orientation)", "課程導向 (Programme Orientation)", 
-        "課程導向 (Programme Orientation)", "課程導向第一階段 (DFS Orientation P1)"
+        "集合 (Assembly)", "學系迎新會 (Departmental Orientation)", 
+        "AS110114課程迎新會 (Programme Orientation)", "AS114103課程迎新會 (Programme Orientation)", 
+        "AS114109課程迎新會 (Programme Orientation)", "AS114109J課程迎新會 (Programme Orientation)", 
+        "AS114205課程迎新會 (Programme Orientation)", "FS113002A課程迎新會第一階段 (DFS Orientation P1)"
     ],
     "時間 (Time)": [
         "09:15 - 09:30", "09:30 - 10:20", 
@@ -47,9 +47,9 @@ orientation_data = {
     ],
     "地點 (Venue)": [
         "禮堂 (Hall)", "禮堂 (Hall)", 
-        "030 室", "Annex Hall", 
-        "118B 室", "208B 室", 
-        "207B 室", "禮堂 (Hall)"
+        "118B 室", "新翼禮堂", 
+        "208B 室", "207B 室", 
+        "030 室", "禮堂 (Hall)"
     ],
     "活動重點摘要 (Details)": [
         "歡迎各位新生！迎新日活動正式開始，請各位移步至禮堂集合。解讀校園第一步，請先安坐。",
@@ -59,13 +59,13 @@ orientation_data = {
         "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。",
         "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構與時間表介紹、學分豁免申請<br>3. <b>現場派發學生證 (Student ID Card)</b>（本場為英文班專場）。",
         "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構與時間表介紹、學分豁免申請<br>3. <b>現場派發學生證 (Student ID Card)</b>（本場為廣東話班專場）。",
-        "基礎文憑（健康與生命科學學群）全體說明會。介紹基礎課程大綱、校園適應。本階段結束後，將根據個別班別進行分流教室導航。"
+        "基礎課程文憑（健康與生命科學）全體說明會。介紹基礎課程大綱、校園適應。本階段結束後，將根據個別班別進行分流。"
     ],
     "重要備註 (Remarks)": [
         "核心活動，請勿遲到", "所有新生必須出席", 
-        "生物醫學系專屬", "分析科學系專屬", 
-        "環境管理系專屬", "樹木管理英文班", 
-        "樹木管理廣東話班", "稍後需進行分流"
+        "可持續發展及環境管理高級文憑（科目組）專屬", "化驗科學高級文憑專屬", 
+        "保育及樹木管理高級文憑專屬", "保育及樹木管理高級文憑（授課語言：中文（廣東話））專屬", 
+        "生物醫學高級文憑專屬", "稍後需進行分流"
     ],
     # 💡 請把下方的圖片網址，替換成你們自己在 GitHub 或是圖床上的真實路線圖連結
     "地圖網址 (MapUrl)": [
@@ -84,12 +84,12 @@ df = pd.DataFrame(orientation_data)
 
 # 4. 新生互動互動篩選器
 st.markdown("### 🔍 查詢你的專屬日程")
-programme_list = ["顯示全日所有活動 (Show All)"] + list(df["課程/學系 (Target)"].unique())
-selected_prog = st.selectbox("請選擇你入讀的課程 / 班別：", programme_list)
+programme_list = ["顯示全日所有活動 (Show All)"] + list(df["課程"].unique())
+selected_prog = st.selectbox("請選擇你入讀的課程：", programme_list)
 
 if selected_prog != "顯示全日所有活動 (Show All)":
-    filtered_df = df[df["課程/學系 (Target)"] == selected_prog]
-    general_df = df[df["課程/學系 (Target)"] == "全體 (HD & DFS)"]
+    filtered_df = df[df["課程"] == selected_prog]
+    general_df = df[df["課程"] == "全體 (HD & DFS)"]
     filtered_df = pd.concat([general_df, filtered_df]).drop_duplicates()
 else:
     filtered_df = df
@@ -111,13 +111,13 @@ for index, row in filtered_df.iterrows():
     # 💡 改用安全的 HTML Markdown 注入地圖，徹底免除 st.image 的參數相容報錯
     with st.expander(f"🗺️ 查看前往【{row['地點 (Venue)']}】的路線指引"):
         st.markdown(f"""
-            <p style='font-size:13px; color:#666;'>指引：請從正門直走，跟隨綠色地標前往。</p>
+            <p style='font-size:13px; color:#666;'>指引：請留意房號前往。</p>
             <img src='{row['地圖網址 (MapUrl)']}' class='map-box' alt='地圖'>
         """, unsafe_allow_html=True)
 
 # 6. DFS 基礎文憑分流提示
-if selected_prog == "顯示全日所有活動 (Show All)" or "基礎文憑" in selected_prog:
-    st.info("💡 **DFS 基礎文憑新生注意：**\n\n在 11:15 完結第一階段後，請根據你的班別前往以下分流教室：\n* **1A, 1E, 1G 班** ➡️ 前往 **118A 室**\n* **1B, 1F 班** ➡️ 前往 **104 室**\n* **1C, 1D, 1H 班** ➡️ 留在 **禮堂 (Hall)**")
+if selected_prog == "顯示全日所有活動 (Show All)" or "基礎課程文憑" in selected_prog:
+    st.info("💡 **DFS 基礎課程文憑新生注意：**\n\n在 11:15 完結第一階段後，請根據你的班別前往以下分流教室：\n* **1A, 1E, 1G 班** ➡️ 前往 **118A 室**\n* **1B, 1F 班** ➡️ 前往 **104 室**\n* **1C, 1D, 1H 班** ➡️ 留在 **禮堂 (Hall)**")
 
 # 7. 底部重要公告與總地圖
 st.markdown("---")
@@ -130,3 +130,8 @@ with st.expander("🏢 點擊展開查看校園全景 / 樓層指南"):
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
 with st.expander("☔ 查看颱風 / 暴雨取消及延期指引"):
     st.warning("若當天早上 6:15 或之前發出紅雨/黑雨警告或八號或以上烈風信號，當日活動將全部取消，並順延至 8月28日 (09:00-11:00) 在原定教室舉行。")
+
+with st.expander("📞 缺席處理與學系聯絡"):
+    st.write("當天因病或其他緊急原因無法出席者，請務必瀏覽**新生資訊網站(https://www.vtc.edu.hk/st/orientation)** 或登入 **學生 Webmail(https://webmail.vtc.edu.hk )** 查看後續補領學生證與教學大綱的安排。")
+    st.write("如有任何疑問，可於辦公時間致電學系查詢：")
+    st.markdown("- **電話：** 2256 7100 / 2256 7156 / 2256 7158")
