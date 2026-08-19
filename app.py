@@ -106,8 +106,8 @@ selected_prog = st.selectbox("請選擇你入讀的課程：", programme_list)
 # 📝 5. 採用 100% 安全的 Streamlit 官方原生元件進行表單分流
 st.markdown("### 📋 新生必填網上表格 (Online Forms)")
 
-if "AS" in selected_prog:
-    # 只要選單文字包含 AS 字頭
+if "高級" in selected_prog:
+    # 只要選單文字包含 高級 字頭
     st.info("💡 **高級文憑課程新生請注意：**\n\n請點擊下方按鈕，於今日內在網上填妥並提交以下兩份高級文憑專屬表格：")
     
     # 官方安全連結按鈕一
@@ -124,8 +124,8 @@ if "AS" in selected_prog:
         use_container_width=True
     )
 
-elif "FS" in selected_prog:
-    # 只要選單文字包含 FS 字頭
+elif "基礎" in selected_prog:
+    # 只要選單文字包含 基礎 字頭
     st.info("💡 **基礎課程文憑新生請注意：**\n\n請點擊下方按鈕，於今日內在網上填妥並提交以下兩份基礎課程文憑專屬表格：")
     
     # 官方安全連結按鈕一
