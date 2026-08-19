@@ -72,7 +72,6 @@ orientation_data = {
         "https://github.com/cwlui-del/hls-orientation/blob/main/2F.png?raw=true"
     ]
 }
-
 df = pd.DataFrame(orientation_data)
 
 # 4. 新生互動互動篩選器
@@ -112,11 +111,6 @@ if selected_prog == "顯示全日所有活動 (Show All)" or "基礎文憑" in s
 
 # 7. 底部重要公告與總地圖
 st.markdown("---")
-st.markdown("### 🗺️ 校園完整樓層分佈圖 (General Map)")
-with st.expander("🏢 點擊展開查看校園全景 / 樓層指南"):
-    # 這裡可以放一張包含全校所有教室位置的大地圖
-    st.image("https://placeholder.com", use_container_width=True, caption="HLS 校園整體教室分佈平面圖")
-
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
 with st.expander("☔ 查看颱風 / 暴雨取消及延期指引"):
     st.warning("若當天早上 6:15 或之前發出紅雨/黑雨警告或八號或以上烈風信號，當日活動將全部取消，並順延至 8月28日 (09:00-11:00) 在原定教室舉行。")
