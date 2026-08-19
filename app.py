@@ -28,15 +28,15 @@ st.markdown('<div class="sub-title">Orientation Day 2026-27 新生導航 App</di
 orientation_data = {
     "課程/學系 (Target)": [
         "全體 (HD & DFS)", "全體 (HD & DFS)", 
-        "AS114205 (生物醫學)", "AS114103 (分析科學)", 
-        "AS110114 (環境管理)", "AS114109 (樹木管理-Eng)", 
-        "AS114109J (樹木管理-粵)", "FS113002A (基礎文憑)"
+        "AS114205 (生物醫學高級文憑)", "AS114103 (化驗科學高級文憑)", 
+        "AS110114 (可持續發展及環境管理高級文憑（科目組）)", "AS114109 (保育及樹木管理高級文憑)", 
+        "AS114109J (保育及樹木管理高級文憑（授課語言：中文（廣東話））)", "FS113002A (基礎課程文憑)"
     ],
     "活動名稱 (Title)": [
-        "集合與報到 (Assembly)", "院系迎新大會 (Departmental Orientation)", 
-        "課程導向 (Programme Orientation)", "課程導向 (Programme Orientation)", 
-        "課程導向 (Programme Orientation)", "課程導向 (Programme Orientation)", 
-        "課程導向 (Programme Orientation)", "課程導向第一階段 (DFS Orientation P1)"
+        "集合 (Assembly)", "學系迎新會 (Departmental Orientation)", 
+        "AS110114課程導向 (Programme Orientation)", "AS114103課程導向 (Programme Orientation)", 
+        "AS114109課程導向 (Programme Orientation)", "AS114109J課程導向 (Programme Orientation)", 
+        "AS114205課程導向 (Programme Orientation)", "FS113002A課程導向第一階段 (DFS Orientation P1)"
     ],
     "時間 (Time)": [
         "09:15 - 09:30", "09:30 - 10:20", 
