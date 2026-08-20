@@ -142,6 +142,24 @@ elif "基礎" in selected_prog:
         use_container_width=True
     )
 
+elif "AS110114" in selected_prog:
+    # 只要選單文字包含 AS110114 字頭
+    st.info("💡 **基礎課程文憑新生請注意：**\n\n請點擊下方按鈕，於今日內在網上填妥並提交以下兩份基礎課程文憑專屬表格：")
+    
+    # 官方安全連結按鈕一
+    st.link_button(
+        "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書 (DFS)", 
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxiznseiXJMFKoHAgekuhNvlUMktTRkZFQU1URlA1WEdRR1k5UTJQS01BNC4u",
+        use_container_width=True
+    )
+    
+    # 官方安全連結按鈕二
+    st.link_button(
+        "🔬 2. 線上填寫：實驗室安全回條 (FS113002A)", 
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxiznseiXJMFKoHAgekuhNvlUMUI4Tk1WSkhFMDVSVjhFRVNBNDlESU02SS4u",
+        use_container_width=True
+    )
+    
 else:
     # 預設狀態或「顯示全日所有活動」時的提示
     st.warning("💡 請先在上方下拉選單選擇你的【入讀課程】，系統會自動為你生成需要填寫的網上表格連結。")
