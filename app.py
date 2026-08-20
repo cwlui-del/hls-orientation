@@ -113,14 +113,14 @@ if "高級" in selected_prog:
     # 官方安全連結按鈕一
     st.link_button(
         "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書", 
-        "https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUNjhQMlVUU0haWVJVQUc4OTY5TFZWUEI2OS4u&sharetoken=Vr72GmTA7i5TsElwJmZT",
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUNjhQMlVUU0haWVJVQUc4OTY5TFZWUEI2OS4u",
         use_container_width=True
     )
     
     # 官方安全連結按鈕二
     st.link_button(
         "🔬 2. 線上填寫：實驗室安全回條", 
-        "https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUOFpVUzgyT05ROTZWNEZDMkNMMzZPNTFaTi4u&sharetoken=Fjhj6vHhmnciXJ3QpjOo",
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxiznseiXJMFKoHAgekuhNvlUMUMyTkhaWDJJQlkzN0hPNDQ1Tk1YSDI0NC4u",
         use_container_width=True
     )
 
@@ -131,14 +131,14 @@ elif "基礎" in selected_prog:
     # 官方安全連結按鈕一
     st.link_button(
         "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書 (DFS)", 
-        "https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUMUEySDROSzUyRVA4RFdGSkJLUjhQQTgwTy4u&sharetoken=fXfweBOhGmYfznYAeXvB",
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUMUEySDROSzUyRVA4RFdGSkJLUjhQQTgwTy4u",
         use_container_width=True
     )
     
     # 官方安全連結按鈕二
     st.link_button(
         "🔬 2. 線上填寫：實驗室安全回條 (FS113002A)", 
-        "https://forms.cloud.microsoft/Pages/ShareFormPage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRURVRPUVk1Vko3N08yVDdUVTNZRExVNVNQWi4u&sharetoken=Fjhj6vHhmnciXJ3QpjOo",
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRURVRPUVk1Vko3N08yVDdUVTNZRExVNVNQWi4u",
         use_container_width=True
     )
 
