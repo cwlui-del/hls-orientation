@@ -149,14 +149,14 @@ elif "AS110114" in selected_prog:
     # 官方安全連結按鈕一
     st.link_button(
         "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書", 
-        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxiznseiXJMFKoHAgekuhNvlUMktTRkZFQU1URlA1WEdRR1k5UTJQS01BNC4u",
+        "https://forms.cloud.microsoft/r/zUZyKrn0SJ",
         use_container_width=True
     )
     
     # 官方安全連結按鈕二
     st.link_button(
         "🔬 2. 線上填寫：實驗室安全回條", 
-        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxiznseiXJMFKoHAgekuhNvlUMUI4Tk1WSkhFMDVSVjhFRVNBNDlESU02SS4u",
+        "https://forms.cloud.microsoft/r/P5p1ApE1Q2",
         use_container_width=True
     )
     
