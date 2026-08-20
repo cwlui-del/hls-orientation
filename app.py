@@ -70,11 +70,11 @@ orientation_data = {
     "活動重點摘要 (Details)": [
         "歡迎各位新生！迎新日活動正式開始，請各位移步至禮堂集合。解讀校園第一步，請先安坐。",
         "1. 院長及系主任致歡迎辭<br>2. 校園支援資訊與基礎設施講座<br>3. HLS IVElite 計劃介紹及學生會招募。所有高級文憑及基礎文憑新生均需參與。",
-        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。",
-        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。",
-        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。</b>（本場為英文班專場）。",
-        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。</b>（本場為廣東話班專場）。",
-        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. <b>現場派發學生證 (Student ID Card)</b><br>4. 校園生活適應與學生支援服務諮詢。",
+        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. 校園生活適應與學生支援服務諮詢。",
+        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. 校園生活適應與學生支援服務諮詢。",
+        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. 校園生活適應與學生支援服務諮詢。</b>（本場為英文班專場）。",
+        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. 校園生活適應與學生支援服務諮詢。</b>（本場為廣東話班專場）。",
+        "1. 班主任見面與簡報 (Class tutor briefing)<br>2. 課程結構詳細介紹、班級時間表、學分豁免申請說明<br>3. 校園生活適應與學生支援服務諮詢。",
         "基礎課程文憑（健康與生命科學）全體說明會。介紹基礎課程大綱、校園適應。本階段結束後，將根據個別班別進行分流。"
     ],
     "重要備註 (Remarks)": [
@@ -113,14 +113,14 @@ if "AS114103" in selected_prog:
     # 官方安全連結按鈕一
     st.link_button(
         "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書", 
-        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxowMOY0lU-xGgk44FFyRACRUNjhQMlVUU0haWVJVQUc4OTY5TFZWUEI2OS4u",
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=YOVOzyieL0G0yqk_QEveTmxyjMUtOmBJoiv9R2s_fRpUQlBLRTlKQk1VRkxPNFJUMU5XMU1ET1Y3SC4u",
         use_container_width=True
     )
     
     # 官方安全連結按鈕二
     st.link_button(
         "🔬 2. 線上填寫：實驗室安全回條", 
-        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=qwXbfulCSEO4kyumJaNQxiznseiXJMFKoHAgekuhNvlUMUMyTkhaWDJJQlkzN0hPNDQ1Tk1YSDI0NC4u",
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=YOVOzyieL0G0yqk_QEveTmxyjMUtOmBJoiv9R2s_fRpUMkdUQ0JNTUhIWVlPWDBVQTBRRzJPWkRXMy4u",
         use_container_width=True
     )
 
@@ -159,7 +159,62 @@ elif "AS110114" in selected_prog:
         "https://forms.cloud.microsoft/r/P5p1ApE1Q2",
         use_container_width=True
     )
+
+elif "AS114109" in selected_prog:
+    # 只要選單文字包含 AS110114 字頭
+    st.info("💡 **高級文憑課程新生請注意：**\n\n請點擊下方按鈕，於今日內在網上填妥並提交以下兩份高級文憑專屬表格：")
     
+    # 官方安全連結按鈕一
+    st.link_button(
+        "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書", 
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=YOVOzyieL0G0yqk_QEveTmxyjMUtOmBJoiv9R2s_fRpUMFIxMDBTTDg4WVk3RUhUMzMxTEVWUlZESC4u",
+        use_container_width=True
+    )
+    
+    # 官方安全連結按鈕二
+    st.link_button(
+        "🔬 2. 線上填寫：實驗室安全回條", 
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=YOVOzyieL0G0yqk_QEveTmxyjMUtOmBJoiv9R2s_fRpURExNUjhTVkJPUVc3U1JMN1BQQjRFSlEzRi4u",
+        use_container_width=True
+    )
+
+elif "AS114109J" in selected_prog:
+    # 只要選單文字包含 AS110114 字頭
+    st.info("💡 **高級文憑課程新生請注意：**\n\n請點擊下方按鈕，於今日內在網上填妥並提交以下兩份高級文憑專屬表格：")
+    
+    # 官方安全連結按鈕一
+    st.link_button(
+        "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書", 
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=YOVOzyieL0G0yqk_QEveTmxyjMUtOmBJoiv9R2s_fRpUNkxLOVlVTzNKOVVPV0VJWU9URlBJQ1RYRy4u",
+        use_container_width=True
+    )
+    
+    # 官方安全連結按鈕二
+    st.link_button(
+        "🔬 2. 線上填寫：實驗室安全回條", 
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=YOVOzyieL0G0yqk_QEveTmxyjMUtOmBJoiv9R2s_fRpUQU4zVzE4UjRUS1VXMU1KMUhCOFpPRFlRSC4u",
+        use_container_width=True
+    )
+
+elif "AS114205" in selected_prog:
+    # 只要選單文字包含 AS110114 字頭
+    st.info("💡 **高級文憑課程新生請注意：**\n\n請點擊下方按鈕，於今日內在網上填妥並提交以下兩份高級文憑專屬表格：")
+    
+    # 官方安全連結按鈕一
+    st.link_button(
+        "📝 1. 線上填寫：學生出席率要求和操行及紀律同意書", 
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=YOVOzyieL0G0yqk_QEveTmxyjMUtOmBJoiv9R2s_fRpURUI4UUdBOFdaSEIxUzNGQlozRUdQSFcwWS4u",
+        use_container_width=True
+    )
+    
+    # 官方安全連結按鈕二
+    st.link_button(
+        "🔬 2. 線上填寫：實驗室安全回條", 
+        "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=YOVOzyieL0G0yqk_QEveTmxyjMUtOmBJoiv9R2s_fRpUNFlLT0ZWRVI0V0pWQlVHNzAyRThKOVhHOS4u",
+        use_container_width=True
+    )
+    
+
 else:
     # 預設狀態或「顯示全日所有活動」時的提示
     st.warning("💡 請先在上方下拉選單選擇你的【入讀課程】，系統會自動為你生成需要填寫的網上表格連結。")
@@ -209,6 +264,13 @@ with st.expander("🏢 點擊展開查看校園樓層指南"):
         <img src='https://github.com/cwlui-del/hls-orientation/blob/main/4F.png?raw=true' class='map-box' alt='校園指南4/F'>
         <img src='https://github.com/cwlui-del/hls-orientation/blob/main/5F.png?raw=true' class='map-box' alt='校園指南5/F'>
     """, unsafe_allow_html=True)
+
+st.markdown("---")
+st.markdown("### 🗺️ 實驗室安全手冊")
+with st.expander("🏢 點擊閱覽實驗室安全手冊"):
+    st.markdown("""
+        <img src='https://www.vtc.edu.hk/st/orientation/2627/HLS/HLS_TC.htm#:~:text=%2D-,%E5%AF%A6%E9%A9%97%E5%AE%A4%E5%AE%89%E5%85%A8%E6%89%8B%E5%86%8A,-%2D%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%E7%A7%91'>
+""", unsafe_allow_html=True)
 
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
 with st.expander("☔ 查看颱風 / 暴雨取消及延期指引"):
