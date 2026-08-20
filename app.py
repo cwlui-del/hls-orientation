@@ -64,7 +64,7 @@ orientation_data = {
     "地點 (Venue)": [
         "禮堂 (Hall)", "禮堂 (Hall)", 
         "118B 室", "新翼禮堂", 
-        "208B 室", "207B 室", 
+        "N108AB 室", "N108AB 室", 
         "030 室", "禮堂 (Hall)"
     ],
     "活動重點摘要 (Details)": [
@@ -89,8 +89,8 @@ orientation_data = {
         "https://github.com/cwlui-del/hls-orientation/blob/main/Hall.png?raw=true",
         "https://github.com/cwlui-del/hls-orientation/blob/main/1F.png?raw=true", 
         "https://github.com/cwlui-del/hls-orientation/blob/main/Annex%20Hall.png?raw=true",
-        "https://github.com/cwlui-del/hls-orientation/blob/main/2F.png?raw=true", 
-        "https://github.com/cwlui-del/hls-orientation/blob/main/2F.png?raw=true",
+        "https://github.com/cwlui-del/hls-orientation/blob/main/Annex%20Hall.png?raw=true", 
+        "https://github.com/cwlui-del/hls-orientation/blob/main/Annex%20Hall.png?raw=true",
         "https://github.com/cwlui-del/hls-orientation/blob/main/GF.png?raw=true", 
         "https://github.com/cwlui-del/hls-orientation/blob/main/Hall.png?raw=true"
     ]
