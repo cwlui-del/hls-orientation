@@ -218,3 +218,4 @@ with st.expander("📞 缺席處理與學系聯絡"):
     st.write("當天因病或其他緊急原因無法出席者，請務必瀏覽**新生資訊網站(https://www.vtc.edu.hk/st/orientation)** 或登入 **學生 Webmail(https://webmail.vtc.edu.hk )** 查看後續領取學生證與課程上課的安排。")
     st.write("如有任何疑問，可於辦公時間致電學系查詢：")
     st.markdown("- **電話：** 2256 7100 / 2256 7156 / 2256 7158")
+demo.launch(server_name="0.0.0.0", server_port=7860)
