@@ -268,10 +268,12 @@ with st.expander("🏢 點擊展開查看校園樓層指南"):
 st.markdown("---")
 st.markdown("### 🗺️ 實驗室安全手冊")
 with st.expander("🏢 點擊閱覽實驗室安全手冊"):
-    st.markdown("""
-        <img src='https://www.vtc.edu.hk/st/orientation/2627/HLS/Lab_Safety_HandBook.pdf'>
-""", unsafe_allow_html=True)
-
+     st.link_button(
+        "🏢 點擊閱覽實驗室安全手冊", 
+        "https://www.vtc.edu.hk/st/orientation/2627/HLS/Lab_Safety_HandBook.pdf",
+        use_container_width=True
+    )
+   
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
 with st.expander("☔ 查看颱風 / 暴雨取消及延期指引"):
     st.warning("若當天早上 6:15 或之前發出紅雨/黑雨警告或八號或以上烈風信號，當日活動將全部取消，並順延至 8月28日 (09:00-11:00) 在原定教室舉行。")
