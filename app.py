@@ -269,7 +269,7 @@ st.markdown("---")
 st.markdown("### 🗺️ 實驗室安全手冊")
 with st.expander("🏢 點擊閱覽實驗室安全手冊"):
     st.markdown("""
-        <img src='https://www.vtc.edu.hk/st/orientation/2627/HLS/HLS_TC.htm#:~:text=%2D-,%E5%AF%A6%E9%A9%97%E5%AE%A4%E5%AE%89%E5%85%A8%E6%89%8B%E5%86%8A,-%2D%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%20%E7%A7%91'>
+        <img src='https://www.vtc.edu.hk/st/orientation/2627/HLS/Lab_Safety_HandBook.pdf'>
 """, unsafe_allow_html=True)
 
 st.markdown("### ⚠️ 緊急通知與聯絡資訊")
