@@ -266,10 +266,10 @@ with st.expander("🏢 點擊展開查看校園樓層指南"):
     """, unsafe_allow_html=True)
 
 st.markdown("---")
-st.markdown("### 🗺️ 實驗室安全手冊")
-with st.expander("🏢 點擊閱覽實驗室安全手冊"):
+st.markdown("### 📝 實驗室安全手冊")
+with st.expander("📝 點擊閱覽實驗室安全手冊"):
      st.link_button(
-        "🏢 點擊閱覽實驗室安全手冊", 
+        "📝 點擊閱覽實驗室安全手冊", 
         "https://www.vtc.edu.hk/st/orientation/2627/HLS/Lab_Safety_HandBook.pdf",
         use_container_width=True
     )
